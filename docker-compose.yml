@@ -15,7 +15,7 @@ services:
       - "8080:8080"
     depends_on:
       - mongo
-    env_file: .env
+    env_file: stack.env
     environment:
       - NODE_ENV=development
     networks:
@@ -40,7 +40,7 @@ services:
     image: opensign-image
     container_name: OpenSign-container
     command: npm start
-    env_file: .env
+    env_file: stack.env
     volumes:
       - ./apps/OpenSign/:/usr/app
       - /usr/app/node_modules
